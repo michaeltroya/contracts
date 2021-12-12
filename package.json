@@ -12,7 +12,8 @@
     "node": "npx hardhat node",
     "deploy:hardhat": "npx hardhat run --network hardhat ./scripts/deploy.ts ",
     "deploy:localhost": "npx hardhat run --network localhost ./scripts/deploy.ts ",
-    "solhint": "node_modules/.bin/solhint 'contracts/**/*.sol'"
+    "solhint:check": "npx solhint 'contracts/**/*.sol'",
+    "solhint:fix": "npx solhint 'contracts/**/*.sol' --fix"
   },
   "repository": {
     "type": "git",
