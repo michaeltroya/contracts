@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.4.16 <0.9.0;
+//SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
 
 // ERC20 blueprint
 abstract contract ERC20Token {
@@ -58,12 +58,12 @@ contract Owned {
     }
 
     function transferOwnership(address _to) public {
-        require(msg.sender == owner);
+        require(msg.sender == owner, "You are not the owner");
         newOwner = _to;
     }
 
     function acceptOwnership() public {
-        require(msg.sender == owner);
+        require(msg.sender == owner, "You are not the owner");
         emit OwnershipTransferred(owner, newOwner);
         owner = newOwner;
         newOwner = address(0);

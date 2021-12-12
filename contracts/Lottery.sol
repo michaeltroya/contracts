@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.4.16 <0.9.0;
+//SPDX-License-Identifier: Unlicense
+pragma solidity ^0.8.0;
 
 contract Lottery {
     address payable[] public players;
@@ -39,10 +39,7 @@ contract Lottery {
     // get lottery winner, transfer funds, reset lotto
     function getWinner() public {
         require(admin == msg.sender, "You are not the admin");
-        require(
-            players.length >= 3,
-            "There must be at least 3 players in the lottery"
-        );
+        require(players.length >= 3, "There must be at least 3 players");
 
         address payable winner;
 
